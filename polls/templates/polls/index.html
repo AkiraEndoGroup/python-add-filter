@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>テストWebアプリ</title>
+  </head>
+  <body>
+    <h1>Calculator</h1>
+    {{ first|add:second }}
+    <p>Created by<b>{{ name }}</b></p>
+    <input id="first" type="number" name="first" value="{{ first }}">
+    +
+    <input id="second" type="number" name="second" value="{{ second }}">
+    =
+    <input id="answer" type="number" name="answer" value="{{ first|add:second }}">
+
+    {% with first=first second=second %}
+      <p>{{ first|add:second }}</p>
+    {% endwith %}
+  </body>
+</html>
